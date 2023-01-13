@@ -1,0 +1,22 @@
+﻿@model string[]
+
+@{
+    // This is linked to _Layout.cshtml
+    ViewData["Title"] = "Bogus Page";
+
+    //These two are interchangeable.
+    var date = (System.DateTime) ViewBag.Date;
+    // var date = (System.DateTime) ViewData["Date"]!;
+}
+
+@* The @ sign is to display the title! *@
+<h1>@ViewData["Title"]</h1>
+
+<p>My first ASP.NET page authored by @ViewData["author"] on @date.ToShortDateString().</p>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item</li>
+    }
+</ul>
